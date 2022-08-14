@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+    .thumb-image {
+        display: block;
+        width: 20vw;
+        height: 30vh;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+
+    li {
+        display: inline-block;
+        padding: 5px;
+    }
+
+    .ul-container{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+    .footer-social-icons {
+        width: 250px;
+        display:block;
+        margin: 0 auto;
+    }
+    .social-icon {
+        
+        color: black;
+    }
+    ul.social-icons {
+        
+        margin-top: 10px;
+    }
+    .social-icons li {
+
+        vertical-align: top;
+        display: inline;
+        height: 100px;
+    }
+    .social-icons a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .fa-linkedin {
+        padding:10px 14px;
+        -o-transition:.5s;
+        -ms-transition:.5s;
+        -moz-transition:.5s;
+        -webkit-transition:.5s;
+        transition: .5s;
+        background-color: white;
+    }
+    .fa-linkedin:hover {
+        background-color: white;
+    }
+    .fa-github {
+        padding:10px 14px;
+        -o-transition:.5s;
+        -ms-transition:.5s;
+        -moz-transition:.5s;
+        -webkit-transition:.5s;
+        transition: .5s;
+        background-color: white;
+    }
+    .fa-github:hover {
+        background-color: white;
+    }
+
+
+
+
+
+
+</style>
+
+<head>
+    <meta charset="utf-8">
+        <!-- Favicon
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
+
+    <title>HTTP Foxes OwO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body >
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <h1>HTTP Status Foxes</h1>
+            </a>
+            <p style="color:white">Inspired by the <a href="https://www.flickr.com/photos/girliemac/sets/72157628409467125" target="_blank"> HTTP Status Cats. </a></p>
+        </nav>
+        
+    </header>
+    <div>
+
+        
+    </div>
+    <div class="container-fluid">
+        <br/><br/>
+        <section>
+            <h3>Images</h3>
+            <p>
+                All images are hosted on <a href="https://github.com/SamuelsonPajeu/http_foxes_api/tree/main/assets/img" target="_blank">Github</a>. <br/>
+                You can also use the URL field in API to get the image link.
+            </p>
+        </section>
+
+        <section>
+            <h3>Get Foxes</h3>
+
+
+            <div class="usage-example"> 
+                <h4>
+                    <span class="bagde badge-success">GET</span>
+                    <kbd>https://http-foxes-api.herokuapp.com/foxes</kbd>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#showReturn" role="button" aria-expanded="false" aria-controls="showReturn">
+                        Show Return Values
+                    </a>
+                    
+                </h4>
+                <div class="collapse" id="showReturn">
+                <!-- <div class="card card-body"> -->
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">NAME</th>
+                                <th scope="col">DATA    TYPE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">code</th>
+                                <td>int</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">description</th>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">url</th>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+            
+
+        </section><br/>
+
+        <section>
+            <h3>Search Foxes</h3>
+
+
+            <div class="usage-example"> 
+                <h5>By code</h5>
+                <h4>
+                    <span class="bagde badge-success">GET</span>
+                    <kbd>https://http-foxes-api.herokuapp.com/foxes/code/*int</kbd>
+
+                    
+                </h4>
+
+                <h5>By description</h5>
+                <h4>
+                    <span class="bagde badge-success">GET</span>
+                    <kbd>https://http-foxes-api.herokuapp.com/foxes/description/*string</kbd>
+
+                    
+                </h4>
+
+            
+        </section>
+        <br/>   
+
+        <section >
+            <ul id="foxes-container" class="ul-container">
+    
+            </ul>
+        </section>
+
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <script src="assets/js/httpfoxes.js"></script>
+</body>
+<footer class="text-center text-lg-start bg-light text-muted">
+
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+
+        <div class="footer-social-icons">
+            <ul class="social-icons">
+                <li><a href="https://www.linkedin.com/in/samuelson-pajeu-7a4369149/" target="_blank" class="social-icon"> <i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/SamuelsonPajeu" target="_blank" class="social-icon"> <i class="fa fa-github"></i></a></li>
+            </ul>
+        </div>
+
+    </section>
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2022 Copyright:
+    <a class="text-reset fw-bold" href="https://samuelsonpajeu.github.io/">samuelsonpajeu.github.io</a>
+    </div>
+
+</footer>
+
+</html>
