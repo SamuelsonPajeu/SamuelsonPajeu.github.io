@@ -1,6 +1,5 @@
 
 
-
 async function getFoxes() {
     const response = await fetch('https://http-foxes-api.herokuapp.com/foxes');
     const data = await response.json();
@@ -15,6 +14,7 @@ getFoxes().then(data => {
 
 function loadWebSite(foxes) {
     const foxesContainer = document.getElementById('foxes-container');
+    const loadingContainer = document.getElementById('loading-foxes');
     foxes.forEach(fox => {
         const foxElement = document.createElement('div');
         foxElement.className = 'fox';
@@ -27,5 +27,6 @@ function loadWebSite(foxes) {
         `;
         foxesContainer.appendChild(foxElement);
     } );
+    loadingContainer.style.display = 'none';
 }
 
