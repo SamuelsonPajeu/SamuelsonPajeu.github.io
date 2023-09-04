@@ -1,7 +1,7 @@
 
 
 async function getFoxes() {
-    const response = await fetch('https://http-foxes-api.herokuapp.com/foxes');
+    const response = await fetch('https://http-foxes-api.onrender.com/foxes');
     const data = await response.json();
     return data;
 }
