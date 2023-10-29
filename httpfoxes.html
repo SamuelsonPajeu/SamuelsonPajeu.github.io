@@ -90,7 +90,7 @@
                         <span class="popUp" id="popUpCode">Copied!</span>
                         <span class="get" onclick="copyToClipboard('linkCode', 'popUpCode')">GET</span>
                         <div class="getLink smallLink" id="linkCode">
-                            https://http-foxes-api.herokuapp.com/foxes/code/*int
+                            https://http-foxes-api.onrender.com/foxes/code/*int
                         </div>
                     </h4>
                 </div>
@@ -100,7 +100,7 @@
                         <span class="popUp" id="popUpDescription">Copied!</span>
                         <span class="get" onclick="copyToClipboard('linkDescription', 'popUpDescription')">GET</span>
                         <div class="getLink" id="linkDescription">
-                            https://http-foxes-api.herokuapp.com/foxes/description/*string</div>
+                            https://http-foxes-api.onrender.com/foxes/description/*string</div>
                     </h4>
                 </div>
             </div>
@@ -110,7 +110,8 @@
             <ul id="foxes-container" class="ul-container d-flex justify-content-around w-100">
                 <div id="loading-foxes">
 
-                    <img class="thumb-image" src="assets\img\http-foxes\loading.gif" alt="fox1">
+                    <img class="thumb-image" id="fox-img-1" src="assets\img\http-foxes\loading.gif" alt="fox1">
+                    <img class="thumb-image" id="fox-img-2" src="assets\img\http-foxes\sad_fox.jpg" alt="fox2">
                     <h2>LOADING...</h2>
                 </div>
             </ul>

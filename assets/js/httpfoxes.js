@@ -1,4 +1,10 @@
 
+const foxesContainer = document.getElementById('foxes-container');
+const loadingContainer = document.getElementById('loading-foxes');
+
+let foxes;
+
+console.log(loadingContainer.style.innerText);
 
 async function getFoxes() {
     const response = await fetch('https://http-foxes-api.onrender.com/foxes');
@@ -6,14 +12,7 @@ async function getFoxes() {
     return data;
 }
 
-getFoxes().then(data => {
-    const foxes = data;
-    loadWebSite(foxes);
-});
-
-function loadWebSite(foxes) {
-    const foxesContainer = document.getElementById('foxes-container');
-    const loadingContainer = document.getElementById('loading-foxes');
+function loadWebSite(foxes) {    
     foxes.forEach(fox => {
         const foxElement = document.createElement('div');
         foxElement.className = 'fox';
@@ -59,3 +58,13 @@ function toggleList() {
     //Toggle 'tableActive' class to display the Return Values
     document.getElementById('valueList').classList.toggle('tableActive');
 }
+
+getFoxes().then(data => {
+    foxes = data;
+    loadWebSite(foxes);
+}).catch(error => {
+    loadingContainer.querySelector("#loading-foxes > h2").innerText = "ERROR ON LOADING";
+    loadingContainer.querySelector("#fox-img-1").style.display = 'none';
+    loadingContainer.querySelector("#fox-img-2").style.display = 'block';
+    throw(error);
+});
